@@ -1,0 +1,39 @@
+{
+  "name": "anyfetch-gcalendar-provider",
+  "version": "0.1.0",
+  "author": "Quentin Buathier <quentin.buathier@epitech.eu>",
+  "bin": {
+    "server": "./bin/server"
+  },
+  "scripts": {
+    "start": "node ./bin/server",
+    "upload": "node ./bin/upload",
+    "test": "NODE_ENV=test mocha -R spec -t 25000"
+  },
+  "main": "./lib/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnyFetch/gcalendar-provider.anyfetch.com"
+  },
+  "keywords": [
+    "anyfetch",
+    "provider",
+    "google calendar"
+  ],
+  "dependencies": {
+    "async": "0.9.x",
+    "googleapis": "^1.0.2",
+    "anyfetch-provider": "^1.0.44",
+    "dotenv": "^0.4.0",
+    "rarity": "2.1.x"
+  },
+  "devDependencies": {
+    "mocha": "1.18.x",
+    "should": "3.3.x",
+    "anyfetch": "^2.0.4"
+  },
+  "licence": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}

@@ -1,0 +1,13 @@
+language: node_js
+services:
+- mongodb
+- redis-server
+node_js:
+- '0.10'
+before_script: npm install --dev
+script: npm test
+env:
+  global:
+  - PROVIDER_URL="http://localhost:8000"
+  - ANYFETCH_API_ID="not-used"
+  - ANYFETCH_API_SECRET="not-used"
