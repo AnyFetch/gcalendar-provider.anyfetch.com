@@ -51,9 +51,8 @@ describe("Workflow", function () {
       req.params.metadata.should.have.property('organizer');
 
       count += 1;
-      if (count === 2) {
+      if(count === 2) {
         apiServer.restore();
-        console.log("DONE");
         done();
       }
 
