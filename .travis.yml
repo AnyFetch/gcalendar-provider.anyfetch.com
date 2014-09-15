@@ -11,3 +11,6 @@ env:
   - PROVIDER_URL="http://localhost:8000"
   - ANYFETCH_API_ID="not-used"
   - ANYFETCH_API_SECRET="not-used"
+  - secure: XCWdFmCJIwOYLjBxS5LJztcFTMR53FewRl/02EuF61Y580UNnZGrsSJMsgV6HXygfAmpFPloHKaEU2mc0yR5UV0JOjeYYUAUkfczqoErFz/WZzMqAmkYm1Xn2OJmSwTC5e3GQmhD6D3ZBcLC3hECwRt7kIN3qKZ3WQNniomq5xA=
+  - secure: jgFpekU8WQGUY9pJ5Icvxrrwa+MtZYqMqTngsluFxqkLksGS2fv5LWHZ8QjxWFUp7QBG0nfkWxzyRprKIcpdaSO8xx0VeEPl84As9xQW8e85ktd6XX50n/vEKjFuP38zV1mBF9aK7jlucNnGSITc5h0eEMMfYIjlAaGCrT5JnZU=
+  - secure: dMkl+PYzxKTMsvIzTXsSDDlbILiadVEmb9NlanwsvlLWBzmbrtfQ2lOuz6tffT3C9eUh3Pyt6hp/Bg3nBQriHaAau7E2CoARpUhimANhko1hJmRvNIOAwrzWGiC60gd0yaNY4Gh4nRV6NsyQmBYH5EGnSNA73L9BkPmAYktoBbo=
