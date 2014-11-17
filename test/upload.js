@@ -35,7 +35,7 @@ describe("Workflow", function () {
     var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, serverConfig.updateAccount, serverConfig.workers, serverConfig.config);
 
     var count = 0;
-    apiServer.override('post', '/documents', function(req, res, next) {
+    apiServer.override('post', '/documents', function(req, res) {
       req.params.should.have.property('identifier');
       req.params.should.have.property('actions');
       req.params.should.have.property('creation_date');
@@ -50,7 +50,8 @@ describe("Workflow", function () {
       req.params.metadata.should.have.property('attendee');
       req.params.metadata.should.have.property('organizer');
 
-      return next;
+      count += 1;
+      res.send(200);
     });
 
     request(server)
@@ -67,7 +68,7 @@ describe("Workflow", function () {
         }
       });
 
-    server.once('empty', function() {
+    server.usersQueue.once('empty', function() {
       count.should.eql(2);
       done();
     });
