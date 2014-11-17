@@ -50,12 +50,6 @@ describe("Workflow", function () {
       req.params.metadata.should.have.property('attendee');
       req.params.metadata.should.have.property('organizer');
 
-      count += 1;
-      if(count === 2) {
-        apiServer.restore();
-        done();
-      }
-
       return next;
     });
 
@@ -71,8 +65,11 @@ describe("Workflow", function () {
         if(err) {
           throw err;
         }
-
-        setTimeout(done, 25000);
       });
+
+    server.once('empty', function() {
+      count.should.eql(2);
+      done();
+    });
   });
 });
