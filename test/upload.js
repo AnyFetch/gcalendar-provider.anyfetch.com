@@ -32,7 +32,8 @@ describe("Workflow", function () {
   });
 
   it("should upload data to AnyFetch", function(done) {
-    var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, serverConfig.updateAccount, serverConfig.workers, serverConfig.config);
+    serverConfig.config.retry = 0;
+    var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, __dirname + '/../lib/workers.js', __dirname + '/../lib/update.js', serverConfig.config);
 
     var count = 0;
     apiServer.override('post', '/documents', function(req, res) {
@@ -67,6 +68,14 @@ describe("Workflow", function () {
           throw err;
         }
       });
+
+    server.usersQueue.on('job.task.failed', function(job, err) {
+      done(err);
+    });
+
+    server.usersQueue.on('job.update.failed', function(job, err) {
+      done(err);
+    });
 
     server.usersQueue.once('empty', function() {
       count.should.eql(2);
