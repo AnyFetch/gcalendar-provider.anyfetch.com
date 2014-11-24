@@ -24,6 +24,8 @@ if(node_env === "production") {
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
+
+  usersConcurrency: process.env.GCALENDAR_USERS_CONCURRENCY || 1,
   concurrency: process.env.GCALENDAR_CONCURRENCY || 1,
 
   mongoUrl: process.env.MONGO_URL || process.env.MONGOLAB_URI,
