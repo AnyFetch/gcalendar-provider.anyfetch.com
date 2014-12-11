@@ -25,8 +25,8 @@ module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
 
-  usersConcurrency: process.env.GCALENDAR_USERS_CONCURRENCY || 1,
-  concurrency: process.env.GCALENDAR_CONCURRENCY || 1,
+  usersConcurrency: process.env.USERS_CONCURRENCY || 1,
+  concurrency: process.env.CONCURRENCY || 1,
 
   mongoUrl: process.env.MONGO_URL || process.env.MONGOLAB_URI,
   redisUrl: process.env.REDIS_URL || process.env.REDISCLOUD_URL,
